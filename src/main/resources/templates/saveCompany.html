@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add COmpany</title>
+</head>
+<body>
+Save Company
+<form action="/company/add" method="post" enctype="multipart/form-data">
+    <input th:if="${company != null}" type="hidden" th:value="${company.id}" name="id">
+    name: <input type="text" name="name" th:value="${company == null} ? '' : ${company.name}"/> <br>
+    size:<input type="number" name="size" th:value="${company == null} ? '' : ${company.size}"/><br>
+    address:  <input type="text" name="address" th:value="${company == null} ? '' : ${company.address}"/> <br>
+
+
+    <input type="submit" value="save">
+</form>
+</body>
+</html>
